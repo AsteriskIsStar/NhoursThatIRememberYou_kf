@@ -1,0 +1,83 @@
+<style>
+  /* 시나리오 본문 (건들x) */
+  #scenario-body {
+    display: none;
+  }
+
+  /* 요약 버튼 색상 */
+  /* 16진수 코드 혹은 rgb 값으로 작성 ex) #d2d2ff or rgb(230, 145, 56) */
+  /* 손가락 모양 커서로 변경 시키려면 cursor: pointer; 추가*/
+  #scenario-btn {
+    color: #000000;
+  }
+
+  /* 요약 버튼에 마우스를 올려 놓을 때 변경되는 색상 */
+  /* 16진수 코드 혹은 rgb 값으로 작성 ex) #d2d2ff or rgb(230, 145, 56) */
+  /* 해당 효과 필요 없으면 아래 코드 제거 */
+  #scenario-btn:hover {
+    color: #d2d2ff;
+  }
+
+  /* 진상 본문 (건들x) */
+  #truth-body {
+    display: none;
+  }
+
+  /* 요약 버튼 색상 */
+  /* 16진수 코드 혹은 rgb 값으로 작성 ex) #d2d2ff or rgb(230, 145, 56) */
+  /* 손가락 모양 커서로 변경 안시키려면 cursor: pointer; 제거*/
+  #truth-btn {
+    color: #000000;
+    cursor: pointer;
+  }
+
+  /* 요약 버튼에 마우스를 올려 놓을 때 변경되는 색상 */
+  /* 16진수 코드 혹은 rgb 값으로 작성 ex) #d2d2ff or rgb(230, 145, 56) */
+  /* 해당 효과 필요 없으면 아래 코드 제거 */
+  #truth-btn:hover {
+    color: rgb(230, 145, 56);
+  }
+</style>
+
+<!-- 버튼 이름도 알아서 수정하기  -->
+<span id="scenario-btn" onclick="scenarioFunc()">본문 펼치기</span>
+<div id="scenario-body">
+  <!-- 시나리오 백업 본 코드 붙여넣기 (html 코드로 이루어진) -->
+</div>
+
+<br><br><br>
+
+<span id="truth-btn" onclick="truthFunc()">진상 펼치기</span>
+<div id="truth-body">
+  <!-- 진상 적어주세요 <html>이든 그냥 글이든 ok (html로 꾸민 뒤 적는게 더 예뻐요) -->
+</div>
+
+
+
+<script>
+  /* 본문 관련 함수 */
+  function scenarioFunc() {
+    if(document.getElementById('scenario-body').style.display === 'block') {
+      // 펼치기 버튼 명 수정
+      document.getElementById('scenario-body').style.display = 'none';
+      document.getElementById('scenario-btn').textContent = '본문 펼치기';
+    } else {
+      // 접기 버튼 명 수정
+      document.getElementById('scenario-body').style.display = 'block';
+      document.getElementById('scenario-btn').textContent = '본문 접기';
+    }
+  }
+
+  /* 진상 관련 함수 */
+  function truthFunc() {
+    if(document.getElementById('truth-body').style.display === 'block') {
+      // 펼치기 버튼 명 수정
+      document.getElementById('truth-body').style.display = 'none';
+      document.getElementById('truth-btn').textContent = '진상 펼치기';
+    } else {
+      // 접기 버튼 명 수정
+      document.getElementById('truth-body').style.display = 'block';
+      document.getElementById('truth-btn').textContent = '진상 접기';
+    }
+  }
+</script>
